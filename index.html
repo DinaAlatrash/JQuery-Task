@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .cont{
+            padding: 10px;
+            background: lightgrey;
+            margin-bottom: 10px;
+        }
+
+        .active {
+            background-color: yellow;
+        }
+
+        .content {
+            display: none;
+            padding: 10px;
+            background: lightgray;
+        }
+
+        .header {
+            background: rgb(175, 173, 173);
+            padding: 10px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+        <body>
+
+        <!-- Task1 -->
+        <div class="cont">Hello World!</div>
+        <button id="toggleBtn">Click Here</button>
+
+        <hr>
+
+        <!-- Task2 -->
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+
+        <hr>
+
+        <!-- Task3-->
+            <h2>Form</h2>
+            <form id="myForm">
+                <label for="username">Username</label><br>
+                        <input type="text" id="username" name="username"><br><br>
+
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email"><br><br>
+
+                        <button type="submit" id="checkBtn">Submit</button>
+                    </form>
+
+                <hr>
+
+        <!-- Task4 -->
+
+            <div class="header">Section 1</div>
+            <div class="content">Content 1</div>
+
+            <div class="header">Section 2</div>
+            <div class="content">Content 2</div>
+
+            <div class="header">Section 3</div>
+            <div class="content">Content 3</div>
+
+
+        <script>
+        $(document).ready(function(){
+
+            
+            $("#toggleBtn").click(function(){
+                $(".cont").toggle();
+            });
+
+            
+            $("li").click(function(){
+                $("li").removeClass("active");
+                $(this).addClass("active");
+            });
+
+            
+        $("#checkBtn").click(function(){
+
+            if($("#name").val() == "" || $("#email").val() == ""){
+                alert("All fields are required");
+            
+            }
+
+        });
+
+        
+            $(".header").click(function(){
+                $(".content").slideUp();
+                $(this).next().slideDown();
+            });
+
+        });
+        </script>
+
+</body>
+</html>
